@@ -1,0 +1,27 @@
+<header>
+    <div class="container mt-3">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-xl-10 m-0 mr-xl-1 logo d-flex align-items-center flex-column flex-sm-row">
+                <a [routerLink]="['/home']" class="mx-0 mr-sm-3 my-2 my-sm-0">
+                    <img src="{{_ruta}}assets/images/logotipos/logo.png" width="200px" alt="GP Blog" class="img">
+                </a>
+                <form #searchForm="ngForm" (ngSubmit)="goSearch()" class="w-100 mb-3 m-sm-0">
+                    <div class="input-group">
+                        <input type="text" name="buscar" placeholder="Buscar Artículo" [(ngModel)]="searchString" class="form-control bg-dark text-white">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success"><fa-icon [icon]="faSearch"></fa-icon></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-xl-auto d-flex justify-content-center mt-1 m-xl-0 p-3 menu">
+                <nav class="nav flex-column flex-sm-row flex-xl-column">
+                    <a [routerLink]="['/home']" [routerLinkActive]="['active']" class="nav-link">Inicio</a>
+                    <a [routerLink]="['/articles']" [routerLinkActive]="['active']" class="nav-link">Artículos</a>
+                    <a [routerLink]="['/news']" [routerLinkActive]="['active']" class="nav-link">Novedades</a>
+                    <a [routerLink]="['/contacto']" [routerLinkActive]="['active']" class="nav-link">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

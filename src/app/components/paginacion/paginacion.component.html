@@ -1,0 +1,48 @@
+<nav *ngIf="!isNews">
+    <ul class="pagination d-flex justify-content-center m-0 p-0">
+        <li class="page-item" [ngClass]="{'disabled': paginaActual == 1}">
+            <span class="page-link" *ngIf="paginaActual == 1">
+                <fa-icon [icon]="faAngleDoubleLeft"></fa-icon>
+            </span>
+            <a class="page-link" [routerLink]="['/articles', paginaActual - 1]" *ngIf="paginaActual != 1" (click)="loadPage(paginaActual - 1)">
+                <fa-icon [icon]="faAngleDoubleLeft"></fa-icon>
+            </a>
+        </li>
+        <li class="page-item" *ngFor="let np of createRange(numeroPaginas)" [ngClass]="{'active': paginaActual == np}">
+            <span class="page-link" *ngIf="paginaActual == np">{{np}}</span>
+            <a [routerLink] = "['/articles', np]" class="page-link" *ngIf="paginaActual != np" (click)="loadPage(np)">{{np}}</a>
+        </li>   
+        <li class="page-item" [ngClass]="{'disabled': paginaActual == numeroPaginas}">
+            <span class="page-link" *ngIf="paginaActual == numeroPaginas">
+                <fa-icon [icon]="faAngleDoubleRight"></fa-icon>
+            </span>
+            <a class="page-link" [routerLink]="['/articles', paginaActual + 1]" *ngIf="paginaActual != numeroPaginas" (click)="loadPage(paginaActual + 1)">
+                <fa-icon [icon]="faAngleDoubleRight"></fa-icon>
+            </a>
+        </li>
+    </ul>
+</nav>
+<nav *ngIf="isNews">
+    <ul class="pagination d-flex justify-content-center m-0 p-0">
+        <li class="page-item" [ngClass]="{'disabled': paginaActual == 1}">
+            <span class="page-link" *ngIf="paginaActual == 1">
+                <fa-icon [icon]="faAngleDoubleLeft"></fa-icon>
+            </span>
+            <a class="page-link" [routerLink]="['/news', paginaActual - 1]" *ngIf="paginaActual != 1" (click)="loadPage(paginaActual - 1)">
+                <fa-icon [icon]="faAngleDoubleLeft"></fa-icon>
+            </a>
+        </li>
+        <li class="page-item" *ngFor="let np of createRange(numeroPaginas)" [ngClass]="{'active': paginaActual == np}">
+            <span class="page-link" *ngIf="paginaActual == np">{{np}}</span>
+            <a [routerLink] = "['/news', np]" class="page-link" *ngIf="paginaActual != np" (click)="loadPage(np)">{{np}}</a>
+        </li>   
+        <li class="page-item" [ngClass]="{'disabled': paginaActual == numeroPaginas}">
+            <span class="page-link" *ngIf="paginaActual == numeroPaginas">
+                <fa-icon [icon]="faAngleDoubleRight"></fa-icon>
+            </span>
+            <a class="page-link" [routerLink]="['/news', paginaActual + 1]" *ngIf="paginaActual != numeroPaginas" (click)="loadPage(paginaActual + 1)">
+                <fa-icon [icon]="faAngleDoubleRight"></fa-icon>
+            </a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,31 @@
+<div class="container container-articles mt-1 mb-5 p-xl-0">
+    <div class="row d-flex justify-content-center bg-articles">
+        <div class="col-12 col-xl-9 d-flex justify-content-center my-4 mx-0" *ngIf="!article">
+            <img src="{{_ruta}}assets/images/loading4.gif" height="300px" alt="Cargando...">
+        </div>
+        <div class="col-12 col-xl-9 my-4" *ngIf="article">
+            <article>
+                <div href="#" class="thumb" (click)="openModal(modal)" *ngIf="article.thumb">
+                    <img src="{{_dataurl + 'img/thumbs/' + article.thumb}}" alt="{{article.titulo}}"
+                        class="img img-fluid">
+                </div>
+
+                <ng-template #modal let-modal>
+                    <div class="modal-body">
+                        <img src="{{_dataurl + 'img/thumbs/' + article.thumb}}" alt="{{article.titulo}}"
+                            class="img img-fluid">
+                    </div>
+                </ng-template>
+
+                <img src="{{_ruta}}assets/images/default.png" alt="{{article.titulo}}" class="img img-fluid"
+                    *ngIf="!article.thumb">
+
+                <h2 class="titulo mt-2">{{article.titulo}}</h2>
+                <span class="text-white">
+                    <b>{{article.fecha | amLocale: 'es' | amDateFormat: 'MMMM D, YYYY'}}</b>
+                </span>
+                <p class="text-justify" [innerHTML]="article.contenido"></p>
+            </article>
+        </div>
+    </div>
+</div>
