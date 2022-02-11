@@ -12,7 +12,7 @@
  
  
 <br />
-<img align="right" height="270px" width="500px" alt="GIF" src="https://raw.githubusercontent.com/giordanoplas/giordanoplas/main/techanimation3.gif" />
+<img align="right" height="270px" width="500px" alt="GIF" src="https://raw.githubusercontent.com/giordanoplas/giordanoplas/main/techanimation7.gif" />
 <p align="center">
   <h3>Blog angular</h3>
 </p>
